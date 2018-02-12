@@ -1,0 +1,40 @@
+PATH
+  remote: .
+  specs:
+    similarweb-api (0.0.2)
+      dry-configurable
+      faraday
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    byebug (9.1.0)
+    coderay (1.1.1)
+    concurrent-ruby (1.0.5)
+    dry-configurable (0.7.0)
+      concurrent-ruby (~> 1.0)
+    faraday (0.14.0)
+      multipart-post (>= 1.2, < 3)
+    method_source (0.8.2)
+    multipart-post (2.0.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.2)
+      byebug (~> 9.0)
+      pry (~> 0.10)
+    rake (10.5.0)
+    slop (3.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  pry-byebug
+  rake (~> 10.0)
+  similarweb-api!
+
+BUNDLED WITH
+   1.16.1
