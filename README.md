@@ -1,4 +1,4 @@
-# Similarweb::Api
+# Similarweb
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/similarweb/api`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'similarweb-api'
+gem 'similarweb-api', :require => 'similarweb'
 ```
 
 And then execute:
@@ -22,7 +22,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+	*All request are make with default params (current month value).*
+
+	#Visits
+
+		Similarweb::Client.visits('wtd.ru')
+
+		or with specific params
+
+		Similarweb::Client.visits('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
+
+
 
 ## Development
 
