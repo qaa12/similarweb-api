@@ -1,8 +1,6 @@
 # Similarweb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/similarweb/api`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Simple ruby wrapper for SimilarWeb API 
 
 ## Installation
 
@@ -20,26 +18,54 @@ Or install it yourself as:
 
     $ gem install similarweb-api
 
+## Configuration
+
+
+```ruby 
+Similarweb::Client.config.token = YOUR_API_KEY
+```
+
+or
+
+```ruby
+# In Rails, you could put this in config/initializers/similarweb.rb
+Similarweb::Client.configure do |config|
+  config.api_key = YOUR_API_KEY
+  # optional parameters
+  config.granularity = 'daily' # monthly/daily/weekly
+  config.start_date = '2018-01'
+  config.end_date = '2018-01'
+  config.main_domain_only = false
+end
+
+```
+
 ## Usage
+*All request are make with default params (current month value).*
 
-	*All request are make with default params (current month value).*
+#### Visits
 
-	#Visits
+	Similarweb::Client.visits('wtd.ru')
 
-		Similarweb::Client.visits('wtd.ru')
+or with specific params
 
-		or with specific params
+	Similarweb::Client.visits('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
 
-		Similarweb::Client.visits('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
+#### Average visit duration
 
+	Similarweb::Client.average_visit_duration('wtd.ru')
 
+or with specific params
 
-## Development
+	Similarweb::Client.average_visit_duration('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+#### Pages per visit
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+	Similarweb::Client.pages_per_visit('wtd.ru')
 
+or with specific params
+
+	Similarweb::Client.pages_per_visit('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/similarweb-api.
