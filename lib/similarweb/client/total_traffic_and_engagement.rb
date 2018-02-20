@@ -14,5 +14,10 @@ module Similarweb
       url = "#{domain}/total-traffic-and-engagement/pages-per-visit"
       self.make_request!(url, params)
     end
+
+    def bounce_rate(domain, params = {})
+      url = "#{domain}/total-traffic-and-engagement/bounce-rate"
+      self.make_request!(url, params)
+    end
   end
 end

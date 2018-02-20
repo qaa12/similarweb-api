@@ -44,28 +44,19 @@ end
 *All request are make with default params (current month value).*
 
 #### Visits
-
-	Similarweb::Client.visits('wtd.ru')
-
-or with specific params
-
-	Similarweb::Client.visits('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
-
-#### Average visit duration
-
-	Similarweb::Client.average_visit_duration('wtd.ru')
-
-or with specific params
-
-	Similarweb::Client.average_visit_duration('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
-
-#### Pages per visit
-
-	Similarweb::Client.pages_per_visit('wtd.ru')
-
-or with specific params
-
-	Similarweb::Client.pages_per_visit('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
+```ruby
+Similarweb::Client.visits('wtd.ru')
+```
+or with any params
+```ruby
+Similarweb::Client.visits('wtd.ru', start_date: '2017-10', end_date: '2017-12', granulatity: 'daily')
+```
+#### Other methods
+```ruby
+average_visit_duration
+pages_per_visit
+bounce_rate
+```
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/similarweb-api.
+Bug reports and pull requests are welcome on GitHub at https://github.com/qaa12/similarweb-api.
